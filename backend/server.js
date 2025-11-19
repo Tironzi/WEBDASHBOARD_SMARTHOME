@@ -35,8 +35,7 @@ const server = http.createServer(app);
 // --- CẤU HÌNH DANH SÁCH CHO PHÉP TRUY CẬP (CORS) ---
 const allowedOrigins = [
   process.env.ORIGIN_FRONTEND,             // 1. Link Online (lấy từ file .env)
-  "https://homedashboard-trongbk.online",  // 2. Link Online (dự phòng viết cứng)
-  "http://127.0.0.1:3000"                  // 3. Link Localhost (để bạn code ở nhà)
+  "http://localhost:3000"                // 3. Link Localhost (để bạn code ở nhà)
 ];
 
 // SOCKET.IO

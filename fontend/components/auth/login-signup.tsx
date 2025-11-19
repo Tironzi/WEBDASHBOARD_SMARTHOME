@@ -8,7 +8,13 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Lock } from "lucide-react"
 
-const API_BASE_URL = "http://localhost:5000/api/auth";
+// Tự động đổi Link: Nếu đang chạy thật (Production) thì dùng Render, còn ở nhà thì dùng Localhost
+const DOMAIN = process.env.NODE_ENV === "production"
+  ? process.env.NEXT_PUBLIC_BACKEND_URL
+  : "http://localhost:5000";
+
+const API_BASE_URL = `${DOMAIN}/api/auth`;
+
 
 interface LoginProps {
   onSuccess: () => void
